@@ -35,7 +35,6 @@ O projeto percorre continuamente os números de 0 a 9, exibindo cada um por 3 se
 
   * 1x Placa Arduino (Uno, Nano, etc.)
   * 1x Painel de LED 8x8 (64 LEDs endereçáveis WS2812B ou similar)
-  * 1x Fonte de alimentação externa de 5V (Recomendado, veja a nota abaixo)
   * Fios Jumper
 
 ### Software
@@ -60,19 +59,14 @@ O projeto percorre continuamente os números de 0 a 9, exibindo cada um por 3 se
 ### Diagrama de Conexão
 
 ```
-      Fonte Externa 5V
-           (+) -------
-            |        |
-           GND --|---o (5V do Painel)
-                 |   |
-                 |---o (GND do Painel)
-                 |
-                 |
-Arduino -------- |
- |               |
- o (Pino D6) --- o (DIN do Painel)
- |
- o (GND) --------|
+ Arduino                  Painel de LED 8x8
+---------                 -----------------
+   5V    -----------------------> V+
+   
+   GND   -----------------------> V-
+   
+ Pino 6 ----------------------> IN
+
 ```
 
 ## ⚙️ Como o Código Funciona
